@@ -1,0 +1,53 @@
+          <Box
+            className="d-flex align-center justify-center mb-10 mt-5 pos-relative"
+            sx={{
+              width: 98,
+              height: 98,
+              borderRadius: '50%',
+            }}
+          >
+            <Box
+              className="pos-absolute"
+              sx={{
+                inset: 0,
+                zIndex: '1',
+                opacity: '0.2',
+                position: 'relative',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                padding: '2rem',
+                // '&::before': {
+                //   content: '',
+                //   position: 'absolute',
+                //   zIndex: '-2',
+                //   left: '-50%',
+                //   top: '-50%',
+                //   width: '200%',
+                //   height: '200%',
+                //   background: 'red',
+                //   animation: 'rotate linear infinite',
+                // },
+              }}
+            />
+
+            <Box
+              className="d-flex align-center justify-center"
+              sx={{
+                width: 64,
+                height: 64,
+                backgroundColor: colors.white,
+                borderRadius: '50%',
+                zIndex: 1000,
+              }}
+              onClick={isRecording ? stopRecordingHandler : startRecordingHandler}
+            >
+              <Box
+                sx={{
+                  backgroundColor: colors.red50,
+                  width: 20,
+                  height: 20,
+                  borderRadius: isRecording ? '3px' : '50%',
+                }}
+              />
+            </Box>
+          </Box>
