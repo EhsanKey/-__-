@@ -1,4 +1,8 @@
-          <Box
+یک پروگرسس بار طبق این تض.یحات میخواهم
+There is a time progress bar around the stop button during the recording that will be completed in 1 minute.
+
+
+<Box
             className="d-flex align-center justify-center mb-10 mt-5 pos-relative"
             sx={{
               width: 98,
@@ -51,3 +55,50 @@
               />
             </Box>
           </Box>
+
+
+
+
+ <Box
+      className="d-flex align-center justify-center mb-10 mt-5 pos-relative"
+      sx={{
+        width: 98,
+        height: 98,
+        borderRadius: '50%',
+        position: 'relative',
+      }}
+    >
+      {isRecording && (
+        <CircularProgress
+          variant="determinate"
+          value={progress}
+          size={98}
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            opacity: 0.2,
+          }}
+        />
+      )}
+      <Box
+        className="d-flex align-center justify-center"
+        sx={{
+          width: 64,
+          height: 64,
+          backgroundColor: 'white',
+          borderRadius: '50%',
+          zIndex: 1000,
+        }}
+        onClick={isRecording ? stopRecordingHandler : startRecordingHandler}
+      >
+        <Box
+          sx={{
+            backgroundColor: 'red',
+            width: 20,
+            height: 20,
+            borderRadius: isRecording ? '3px' : '50%',
+          }}
+        />
+      </Box>
+    </Box>
